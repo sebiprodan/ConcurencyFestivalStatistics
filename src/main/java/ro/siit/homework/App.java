@@ -7,10 +7,11 @@ public class App {
     public static void main(String[] args) {
 
         ValidatedTickets validatedTickets = new ValidatedTickets();
+        FestivalGate gate = new FestivalGate();
         int ticketsCount = Randomizer.getTicketsCount();
         FestivalAtendee[] festivalAtendees = new FestivalAtendee[ticketsCount];
         for (int i = 0; i < ticketsCount; i++) {
-            festivalAtendees[i] = new FestivalAtendee(i, validatedTickets);
+            festivalAtendees[i] = new FestivalAtendee(i, validatedTickets, gate);
             festivalAtendees[i].start();
         }
 

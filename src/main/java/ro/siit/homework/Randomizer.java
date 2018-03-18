@@ -12,7 +12,7 @@ public class Randomizer {
     }
 
     public static int getTicketsCount(){
-        return (new Random()).nextInt(1000) + 1 ;
+        return (new Random()).nextInt(200) + 1 ;
     }
 }
 

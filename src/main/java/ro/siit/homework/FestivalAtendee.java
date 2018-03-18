@@ -11,10 +11,10 @@ public class FestivalAtendee extends Thread{
         this.ticketType = ticketType;
         this.gate = gate;
     }
-
-    public FestivalAtendee (Integer i, ValidatedTickets validatedTickets){
+    public FestivalAtendee(Integer i, ValidatedTickets validatedTickets, FestivalGate gate){
         this.i  = i;
         this.validatedTickets = validatedTickets;
+        this.gate = gate;
     }
 
     @Override
