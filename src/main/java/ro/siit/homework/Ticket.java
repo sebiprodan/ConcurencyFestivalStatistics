@@ -7,7 +7,7 @@ public class Ticket {
         this.validated = validated;
     }
 
-    TicketType getValidated(){
+    TicketType getValidatedTicketType(){
         return validated;
     }
 }

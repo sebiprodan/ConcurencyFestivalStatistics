@@ -5,13 +5,16 @@ import java.util.Map;
 public class App {
 
     public static void main(String[] args) {
+        int ticketsCount;
+        FestivalGate validatedTickets;
+        FestivalAtendee[] festivalAtendees;
 
-        ValidatedTickets validatedTickets = new ValidatedTickets();
-        FestivalGate gate = new FestivalGate();
-        int ticketsCount = Randomizer.getTicketsCount();
-        FestivalAtendee[] festivalAtendees = new FestivalAtendee[ticketsCount];
+        validatedTickets = new FestivalGate();
+        ticketsCount = Randomizer.getTicketsCount();
+        festivalAtendees = new FestivalAtendee[ticketsCount];
+
         for (int i = 0; i < ticketsCount; i++) {
-            festivalAtendees[i] = new FestivalAtendee(i, validatedTickets, gate);
+            festivalAtendees[i] = new FestivalAtendee(i,validatedTickets);
             festivalAtendees[i].start();
         }
 
@@ -32,12 +35,12 @@ public class App {
 
 
     public static void printResults(String message, Map<TicketType, Integer> results) {
-        System.out.println("-------------------");
+        System.out.println("--------------------------------------");
         System.out.println(message);
         for (TicketType ticketType : results.keySet()) {
-            System.out.println(ticketType + ":" + results.get(ticketType));
+            System.out.println(results.get(ticketType) + " participants have " + ticketType + " tickets.");
         }
-        System.out.println("-------------------");
+        System.out.println("--------------------------------------");
     }
 
 }

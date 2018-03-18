@@ -1,9 +1,10 @@
 package ro.siit.homework;
 
 public enum TicketType {
-    Full,
+    FullPass,
     FullVip,
     FreePass,
     OneDay,
     OneDayVip
 }
+
